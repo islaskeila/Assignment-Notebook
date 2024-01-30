@@ -24,3 +24,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+struct AssignmentItem: Identifiable {
+    var id = UUID ()
+    var priority = String()
+    var description = String()
+    var dueDate = Date()
+}
