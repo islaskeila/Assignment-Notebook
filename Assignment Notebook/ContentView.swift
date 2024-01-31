@@ -10,13 +10,15 @@ import SwiftUI
 struct ContentView: View {
     @State private var assignmentItems = [AssignmentItem(priority: "High", description: "Walk the dog", dueDate: Date()), AssignmentItem(priority: "Medium", description: "Do the laundry", dueDate: Date()), AssignmentItem(priority: "Low", description: "Do homework")]
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            List {
+                ForEach (assignmentItems) { item in
+                    Text(item.description)
+                }
+            }
+            .navigationBarTitle("Assignment Notebook", displayMode: .inline)
         }
-        .padding()
+        
     }
 }
 
