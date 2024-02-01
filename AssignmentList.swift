@@ -7,5 +7,5 @@
 
 import Foundation
 class AssignmentList: ObservableObject {
-    @Published var items = [AssignmentItem(priority: "Math", description: "Finish equation sheet", dueDate: Date()), AssignmentItem(priority: "English", description: "Finish intro essay", dueDate: Date()), AssignmentItem(priority: "Science", description: "Finish lab")]
+    @Published var items = [AssignmentItem(course: "Math", description: "Finish equation sheet", dueDate: Date()), AssignmentItem(course: "English", description: "Finish intro essay", dueDate: Date()), AssignmentItem(course: "Science", description: "Finish lab")]
 }

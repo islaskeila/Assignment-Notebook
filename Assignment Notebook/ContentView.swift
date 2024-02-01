@@ -15,7 +15,7 @@ struct ContentView: View {
                 ForEach (assignmentList.items) { item in
                     HStack {
                         VStack(alignment: .leading) {
-                            Text(item.priority)
+                            Text(item.course)
                                 .font(.headline)
                             Text(item.description)
                         }
@@ -44,7 +44,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 struct AssignmentItem: Identifiable {
     var id = UUID ()
-    var priority = String()
+    var course = String()
     var description = String()
     var dueDate = Date()
 }
