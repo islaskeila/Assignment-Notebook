@@ -17,17 +17,20 @@ struct ContentView: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Text(item.course)
-                                .font(.headline)
+                                .font(Font.custom("Marker Felt", size: 22))
+                                .background(Color.yellow)
                             Text(item.description)
+                            
                         }
                         Spacer()
                         Text(item.dueDate, style: .date)
+                        
                     }
                 }
-                .onMove { indices, newOffset in
+                .onMove {indices, newOffset in
                     assignmentList.items.move(fromOffsets: indices, toOffset: newOffset)
                 }
-                .onDelete { indexSet in
+                .onDelete {indexSet in
                     assignmentList.items.remove(atOffsets: indexSet)
                 }
             }
@@ -41,7 +44,6 @@ struct ContentView: View {
                     Image(systemName: "plus")
                 })
         }
-        
     }
 }
 
@@ -50,7 +52,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-struct AssignmentItem: Identifiable {
+struct AssignmentItem: Identifiable, Codable {
     var id = UUID ()
     var course = String()
     var description = String()
